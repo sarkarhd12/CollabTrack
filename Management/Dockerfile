@@ -1,8 +1,8 @@
-FROM maven:3.8.5-openjdk-17 AS build
-COPY . .
-RUN mvn clean package-DskipTests
+# FROM openjdk:17
+# ADD target/springboot-mysql-docker.jar springboot-mysql-docker.jar
+# ENTRYPOINT["java","jar","/springboot-mysql-docker.jar"]
 
-FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/Management-0.0.1-SNAPSHOT.jar Management.jar
-EXPOSE 8080
-ENTRYPOINT ["java","-jar","Management.jar"]
+FROM eclipse-temurin:22-jdk-alpine
+
+COPY target/*.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

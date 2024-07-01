@@ -1,0 +1,20 @@
+#version: "4.30.0"
+#services:
+#  server:
+#    build: .
+#    restart: always
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - mysqldb
+#
+#  mysqldb:
+#    image: "mysql:5.7"
+#    restart: always
+#    ports:
+#      - "3306:3306"
+#    environment:
+#      MYSQL_DATABASE: projectmanagement
+#      MYSQL_USER: root
+#      MYSQL_PASSWORD: 9083
+#      MYSQL_ROOT_PASSWORD: 9083

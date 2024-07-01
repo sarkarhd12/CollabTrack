@@ -72,7 +72,7 @@ const {project} = useSelector(store=>store)
               
                 <div className='pt-5'>
                     <RadioGroup className='space-y-3 pt-5'
-                    defaultValue="all" 
+                    defaultValue="All" 
                     onValueChange={(value)=>
                     handleFilterCategory(value)}>
 
@@ -148,8 +148,8 @@ const {project} = useSelector(store=>store)
             <ProjectCard item={item} key={item.id * index} />
         )
     ) : (
-        Array.isArray(project.projects) && project.projects.map((item) =>
-            item ? <ProjectCard  item={item} key={item.id} /> : null
+        Array.isArray(project.projects) && project.projects.map((item,index) =>
+            item && <ProjectCard  item={item} key={`${item.id}-${index}`} /> 
         )
     )
 
@@ -164,3 +164,4 @@ const {project} = useSelector(store=>store)
 }
 
 export default ProjectList
+

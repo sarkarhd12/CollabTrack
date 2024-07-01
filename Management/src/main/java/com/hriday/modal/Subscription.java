@@ -26,7 +26,7 @@ public class Subscription {
     private boolean isValid;
 
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "id")
     private User user;
 
 }

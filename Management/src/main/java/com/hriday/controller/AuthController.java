@@ -8,6 +8,7 @@ import com.hriday.request.LoginRequest;
 import com.hriday.response.AuthResponse;
 import com.hriday.service.CustomeUserDetailsImpl;
 import com.hriday.service.SubscriptionService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -67,7 +68,7 @@ public class AuthController {
     }
 
     @PostMapping("/signin")
-    public ResponseEntity<AuthResponse> signin(@RequestBody LoginRequest loginRequest){
+    public ResponseEntity<AuthResponse> signin(@NotNull @RequestBody LoginRequest loginRequest){
 
         String username=loginRequest.getEmail();
         String password=loginRequest.getPassword();
